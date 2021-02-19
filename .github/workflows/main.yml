@@ -20,7 +20,7 @@ jobs:
     - name: Prepare
       id: prep
       run: |
-        IMAGE_ORG=itzg
+        IMAGE_ORG=pypeware
         IMAGE_NAME=bungeecord
         VERSION=edge
         if [[ $GITHUB_REF == refs/tags/* ]]; then
@@ -73,9 +73,9 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
         labels: |
-          org.opencontainers.image.documentation=https://github.com/itzg/docker-bungeecord
+          org.opencontainers.image.documentation=https://github.com/pypeware/docker-bungeecord
           org.opencontainers.image.version=${{ steps.prep.outputs.version }}
-          org.opencontainers.image.source=https://github.com/itzg/docker-bungeecord
+          org.opencontainers.image.source=https://github.com/pypeware/docker-bungeecord
           org.opencontainers.image.revision=${{ github.sha }}
 
     - name: Image digest
